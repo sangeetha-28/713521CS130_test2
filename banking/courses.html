@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Courses</title>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+       
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #333;
+    }
+    select {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #courseList {
+        list-style: none;
+    }
+    #courseList li {
+        background: #e9ecef;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    @media (max-width: 600px) {
+        nav ul li {
+            display: block;
+            margin: 10px 0;
+        }
+        main {
+            padding: 15px;
+        }
+        header h1 {
+            font-size: 1.8em;
+        }
+        h1 {
+            font-size: 2em;
+        }
+    }
+    @media (max-width: 400px) {
+        main {
+            padding: 10px;
+        }
+        header h1 {
+            font-size: 1.5em;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        nav ul li {
+            margin: 5px 0;
+        }
+    }
+    </style>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <header>
+        <main>
+            <h1>Course List</h1>
+            
+            <label for="categorySelect">Select Course :</label>
+            <select id="categorySelect">
+                <option value="All">All</option>
+                <option value="Development">Web Development</option>
+                <option value="Data">Data Science</option>
+                <option value="Design">Graphic Design</option>
+                <option value="Data">Machine Learning</option>
+                <option value="Marketing">Digital Marketing</option>
+                <option value="Design">python Basic</option>
+                <option value="Data">Advance Java</option>
+                <option value="Marketing">React Js</option>
+            </select>
+            
+            <ul id="courseList"></ul>
+            
+        </main>
+    </header>
+    <footer>
+        <p>&copy; 2023 Online Learning Portal</p>
+    </footer>
+    <script>
+        // Sample course data
+        const courses = [
+            { title: "Web Development", category: "Development" },
+            { title: "Data Science", category: "Data" },
+            { title: "Graphic Design", category: "Design" },
+            { title: "Machine Learning", category: "Data" },
+            { title: "Digital Marketing", category: "Marketing" },
+            { title: "python Basic", category: "Design" },
+            { title: "Advance Java", category: "Data" },
+            { title: "React Js", category: "Marketing" },
+        ];
+
+        // Function to display courses
+        function displayCourses(courseList) {
+            const courseContainer = document.getElementById('courseList');
+            courseContainer.innerHTML = ''; // Clear existing courses
+
+            courseList.forEach(course => {
+                const courseItem = document.createElement('li');
+                courseItem.textContent = `${course.title} (${course.category})`; // Corrected string interpolation
+                courseContainer.appendChild(courseItem);
+            });
+        }
+
+        // Function to filter courses
+        function filterCourses(category) {
+            if (category === 'All') {
+                displayCourses(courses);
+            } else {
+                const filteredCourses = courses.filter(course => course.category === category);
+                displayCourses(filteredCourses);
+            }
+        }
+
+        // Event listener for category selection
+        document.getElementById('categorySelect').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            filterCourses(selectedCategory);
+        });
+
+        // Initial display of all courses
+        displayCourses(courses);
+    </script>
+</body>
+</html>

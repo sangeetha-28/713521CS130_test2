@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+nav {
+    background-color: #99582a;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #bb9457;
+    border-radius: 5px;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffe6a7;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #99582a;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #99582a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #745743;
+}
+
+/* Specific Page Styles */
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Courses Page */
+header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header ul li {
+    background-color: #ffe6a7;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Contact Page */
+textarea {
+    height: 100px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+.apply-content{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr) ;
+    text-align: center;
+    
+}
+.apply-content a{
+    text-decoration: none;
+    color: black;
+
+}
+@media (max-width:976px){
+    .apply-content{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(5,1fr);
+    }
+}
+@media (max-width:567px){
+    .apply-content{
+        grid-template-columns:1fr 1fr;
+    grid-template-rows:repeat(5,1fr);
+    }
+}
+.apply-content > div{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fbfbfb;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
